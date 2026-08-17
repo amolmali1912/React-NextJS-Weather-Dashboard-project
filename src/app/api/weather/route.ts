@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "City is required" }, { status: 400 });
   }
 
-  const apiKey = process.env.OPENWEATHER_API_KEY; // OPENWEATHER_API_KEY=f7d1af8d579d9390fa5f891fd81ea298,this key comes from .env.local file which is going to omit during deployment as this is mentioned in .gitignore file
+  const apiKey = process.env.OPENWEATHER_API_KEY; // Here we need to specify OPENWEATHER_API_KEY, for this we have to create an account on openweathermap.org
 
   if (!apiKey) {
     return NextResponse.json({ error: "API key is missing" }, { status: 500 });
